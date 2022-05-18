@@ -1,0 +1,13 @@
+<div class="container">
+
+  <h1 class ="d-flex justify-content-center mt-5">Créer un restau</h1>
+
+  <%= simple_form_for [@restaurant] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category, collection: Restaurant::CATEGORY%>
+    <%= f.submit "Créer", class: "btn btn-primary" %>
+  <% end %>
+
+</div>

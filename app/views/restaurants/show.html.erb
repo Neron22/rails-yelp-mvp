@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class ="d-flex justify-content-center mt-5"><%= @restaurant.name %></h1>
+
+  <ul class="list-unstyled">
+      <li><%= @restaurant.address %></li>
+      <li><%= @restaurant.phone_number %></li>
+      <li><%= @restaurant.category %></li>
+  </ul>
+
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.rating%> : <%=review.content %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+
+  <p>-------------------------------------</p>
+
+  <br>
+  <br>
+
+  <%= link_to 'Back', restaurants_path %> |
+</div>

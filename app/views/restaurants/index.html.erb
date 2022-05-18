@@ -1,0 +1,17 @@
+<div class="container">
+
+  <h1 class ="d-flex justify-content-center mt-5">Tous les restaus</h1>
+
+  <ul class="list-unstyled">
+    <% @restaurants.each do |restaurant|%>
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+      <li><%= restaurant.address %></li>
+      <li> note moyenne : <%= restaurant.average_rating %></li>
+      <p>-------------------------------------</p>
+
+    <% end %>
+
+    <%= link_to "+ Create a restau", new_restaurant_path, class: "btn btn-primary" %>
+
+  </ul>
+</div>
